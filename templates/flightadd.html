@@ -1,0 +1,113 @@
+<html>
+<head>
+<title>Admin Dash</title>
+<style>
+	body{
+		background-image: url("/static/flight.jpg");
+		background-repeat: no-repeat;
+		background-position:center left;
+		background-size: cover;
+	}
+	#main{
+				width: 650px;
+				height: 500px;
+				background:white;
+				margin-left: 400px;
+				margin-top: 40px;
+				opacity: 0.8;
+				border: 3px solid black;
+				border-radius: 20px;
+			}
+			#in1, .btn
+			{
+				margin-top: 30px;
+				padding: 10px;
+				width: 200px;
+			}
+			.btn:hover{
+				background-color: black;
+				color: white;
+			}
+			#select{
+				margin-top: 20px;
+				padding: 10px;
+				width: 200px;
+			}
+</style>
+</head>
+<body>
+{% include "adminnav.html" %}
+<form action="" method="post">
+    {% csrf_token %}
+<div id="main">
+			<h2 align="center"> New Flight Add Page </h2>
+			<div align="center">
+				<label> F_ID </label>
+				<input id="in1" type="text" name="fid" placeholder="Enter ID">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<label> DATE </label>
+				<input id="in1" type="date" name="dt1" >
+			</div>
+			<div align="center">
+				<label> F_Name </label>
+				<select name="fname" id="select">
+					<option value="">--select--</option>
+					<option value="Air India">Air India</option>
+					<option value="IndiGo">IndiGo</option>
+					<option value="SpiceJet">SpiceJet</option>
+					<option value="Vistara">Vistara</option>
+				</select>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<label> Seats </label>
+				<input id="in1" type="text" name="seats" >
+			</div>
+			<div align="center" >
+				<label> Source </label>
+				<select name="source" id="select">
+					<option value="">--select--</option>
+					<option value="Mumbai">Mumbai</option>
+					<option value="Mumbai">Pune</option>
+					<option value="Mumbai">Nagpur</option>
+					<option value="Mumbai">Goa</option>
+				</select>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				
+				<label> Destination </label>
+				<select name="det" id="select">
+					<option value="">--select--</option>
+					<option value="Goa">Goa</option>
+					<option value="Nagpur">Nagpur</option>
+					<option value="Pune">Pune</option>
+					<option value="Mumbai">Mumbai</option>
+					
+					
+					
+				</select>
+			</div>
+			<div align="center">
+				<label> Prize </label>
+				<input id="in1" type="text" name="prize" >
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				
+				<label> Date </label>
+				<input id="in1" type="Date" name="dt2" >
+			</div>
+			<div align="center">
+				
+				<input class="btn" type="submit" value="Save" >
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				
+				<input class="btn" type="submit" value="Cancel" >
+			</div>
+		</div>
+	</form>
+</body>
+</html>

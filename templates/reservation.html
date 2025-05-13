@@ -1,0 +1,169 @@
+
+<html>
+<head>
+	<title>My Web Page</title>
+<style type="text/css">
+	body{
+		background-image: url("/static/res.jpg");
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+
+	}
+	
+	form #table
+	{
+		width: 750px;
+		height: 550px;
+		padding: 20px;
+		border-spacing: 10px;
+		border-radius: 0px 30px;
+	}
+	table{
+		margin-left: 300px;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		background-color: white;
+		background-image: url("/static/resback.jpg");
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		font-size: 18px;
+		opacity: 0.8;
+
+		
+	}
+	table td{
+		width: 100px;
+		
+	}
+	table tr
+	{
+		height: 40px;
+		margin-left: 200px;
+	}
+	table tr td
+	{
+		text-align: center;
+	}
+	#t input
+	{
+		width: 90%;
+	}
+	input
+	{
+		padding: 5px;
+		border-radius: 25px;
+		border-style: none;
+	}
+	#select, .d
+	{
+		padding: 5px;
+		width: 180px;
+		border-radius: 25px;
+		border-style: none;
+	}
+	#btn
+	{
+		background-color: whitesmoke;
+		margin-left: 10px;
+		padding: 10px;
+		width: 150px;
+	}
+	#btn:hover
+	{
+		cursor: pointer;
+		background-color: red;
+		
+	}
+</style>
+</head>
+<body>
+{% include "usernav.html" %}
+<form action="#" method="post">
+    {% csrf_token %}
+	<table id="table" >
+		<tr>
+			<th colspan="4"> Airline Tickit Reservation Form </th>
+		</tr>
+
+		<tr>
+			<td>Book-Id :</td>
+			<td><input type="text" value="{{s1.id}}"  placeholder="Enter Book-Id" name="bid" required> </td>
+			<td>Date :</td>
+			<td><input class="d" type="date"  name="dt" required> </td>
+		</tr>
+
+
+		<tr>
+			<td>Name :</td>
+			<td colspan="3" id="t">
+				<input type="text" value="{{s1.fname}}"  placeholder="Enter Full Name" name="name" required> 
+			</td>
+		</tr>
+		<tr>
+			<td>Email :</td>
+			<td><input type="Email" value="{{s1.email}}"  placeholder="Enter Email" name="email" required> </td>
+			<td>Mobile No :</td>
+			<td><input type="text" value="{{s1.mobile}}"  placeholder="Enter Mobile Number" name="mob" required> </td>
+		</tr>
+
+
+		<tr>
+			<td>Flight Name :</td>
+			<td>
+				<select name="fname" id="select">
+					<option value=" ">--- select ---</option>
+					<option value="Air India">Air India</option>
+					<option value="IndiGo">IndiGo</option>
+					<option value="SpiceJet">SpiceJet</option>
+					<option value="Vistara">Vistara</option>
+				</select>
+
+			</td>
+			<td>Booking Date :</td>
+			<td><input  class="d" type="date" name="bdt" required> </td>
+		</tr>
+		<tr>
+			<td>Source :</td>
+			<td>
+				<select name="source" id="select">
+					<option value=" ">--- select ---</option>
+					<option value="Mumbai"> Mumbai </option>
+					<option value="Goa"> Goa </option>
+					<option value="Delhi"> Delhi </option>
+					<option value="U.K"> U.K </option>
+					<option value="Dubai"> Dubai </option>
+				</select>
+			</td>
+			<td>Destination :</td>
+			<td>
+				<select name="dest" id="select">
+					<option value=" ">--- select ---</option>
+					<option value="Dubai"> Jalgaon </option>
+                    <option value="U.K"> U.K </option>
+                    <option value="Delhi"> Mumbai </option>
+                    <option value="Goa"> Goa </option>
+                    <option value="Mumbai"> Dubai </option>
+					
+					
+					
+					
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>Seat :</td>
+			<td><input type="text" name="seat" placeholder="Enter Seat" name="seat" required> </td>
+
+		</tr>
+		<tr>
+			<td colspan="4">
+				<input id="btn" type="submit" value="Save">
+				<input id="btn" type="submit" value="Cancel">
+			</td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,77 @@
+
+<html>
+<head>
+	<title> My Web Page </title>
+	<style type="text/css">
+	body{
+		background-image: url("/static/res.jpg");
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+
+	}
+	
+	table{
+		margin-left: 300px;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		background-color: white;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		font-size: 18px;
+		opacity: 0.8;
+
+		
+	}
+	table th{
+		width: 100px;
+		padding: 5px;		
+	}
+	table tr
+	{
+		height: 40px;
+		margin-left: 200px;
+	}
+	table tr td
+	{
+		text-align: center;
+	}
+	
+	</style>
+</head>
+<body>
+    {% include 'usernav.html' %}
+
+	<table id="table" border="1" width="1000" cellpadding="10">
+
+	<h1 align="center">Flight Available Information</h1> 
+	
+		<tr>
+			<th>F_ID </th>
+			<th>F_NAME </th>
+			<th>SEATS </th>
+			<th>SOURCE </th>
+			<th>DESTINATION </th>
+			<th>PRIZE </th>
+			<th>DEPARTURE_DATE </th>
+		</tr>
+		
+        {% for i in data %}
+		<tr>
+			<td>{{i.fid}}</td>
+			<td>{{i.fname}}</td>
+			<td>{{i.seats}}</td>
+			<td>{{i.source}}</td>
+			<td>{{i.dest}}</td>
+			<td>{{i.prize}}</td>
+			<td>{{i.dt2}}</td>
+		</tr>
+        {% endfor %}
+
+		
+		
+	</table>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>My Web Page</title>
+<style>
+	body{
+		background-image: url("https://t3.ftcdn.net/jpg/02/90/89/76/360_F_290897614_7RdAsk2GmumcGWZ2qklmV74hKlNmznSx.jpg");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+	.login{
+		height: 400px;
+		width: 300px;
+		background-color: white; 
+		margin-left: 500px;
+		margin-top: 100px;
+		opacity: 0.8;
+		border:3px solid red;
+		border-radius: 0px 40px;
+	}
+	#img1{
+			height: 100px;
+			width: 100px;
+			border-radius: 50%;
+			margin-left: 100px;
+			margin-top: -40;
+			border:2px solid red;
+			padding: -5px;
+	}
+	#img2{
+			width: 150px;
+			height: 100px;
+			margin-left: 70px;
+	}	
+	#input{
+			margin-left: 50px;
+			margin-top: 10px;
+			padding:10px;
+	}
+	#btn{
+			margin-left: 50px;
+			margin-top: 10px;
+			padding:10px;
+	}
+</style>
+</head>
+<body>
+	{% include 'nav.html' %}
+<div class="login">
+	<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgqugyJge8XSwS5JVVpb1_BxA-w2Ue8H8Kiw&s" id="img1">
+	<h2 align="center">Login Window</h2>
+	<form action="" method="post">
+		{% csrf_token %}
+		<input type="text" id="input" name="em" placeholder="Enter User" required><br>
+		<input type="password" id="input" name="ps" placeholder="Enter Password" required><br>
+		<input type="submit" value="Login" id="btn"><br>
+		<img src="https://cdn.pixabay.com/photo/2020/06/30/14/37/facebook-5356593_1280.png" id="img2">
+	</form>
+</div>
+</body>
+</html>

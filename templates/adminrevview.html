@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>User Dash</title>
+<style>
+	body{
+		background-image: url("/static/image.jpg");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+
+	}
+    table{
+        margin-left: 250px;
+        margin-top: 50px;
+        background-color: whitesmoke;
+    }
+</style>
+</head>
+<body>
+{% include "adminnav.html" %}
+<table border="1" width="1000">
+    <tr>
+        <th height="50">B-Id</th>
+        <th>Date</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>FName</th>
+        <th>B-Date</th>
+        <th>Source</th>
+        <th>Dest</th>
+        <th>Seat</th>
+        <th>Price</th>
+        <th>Status</th>
+    </tr>
+    
+    <tr align="center" >
+        <td height="70">{{data.bid}}</td>
+        <td>{{data.dt}}</td>
+        <td>{{data.name}}</td>
+        <td>{{data.email}}</td>
+        <td>{{data.mobile}}</td>
+        <td>{{data.fname}}</td>
+        <td>{{data.bookdt}}</td>
+        <td>{{data.source}}</td>
+        <td>{{data.dest}}</td>
+        <td>{{data.seat}}</td>
+        <td>{{data.prize}}</td>
+        <td>{{data.status}}</td>
+    </tr>
+</table>
+</body>
+</html>
